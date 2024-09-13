@@ -14,21 +14,20 @@ return [
     | To learn more: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
     |
     */
+    'paths' => ['api/*', 'sanctum/csrf-cookie'],  // Apply CORS to all API routes
 
-    'paths' => ['*'],
+    'allowed_methods' => ['*'],  // Allow all HTTP methods
 
-    'allowed_methods' => ['*'],
-
-    'allowed_origins' => [env('FRONTEND_URL', 'http://localhost:3000')],
+    'allowed_origins' => ['http://localhost:5173'],  // Replace with your frontend's URL (Vue.js app)
 
     'allowed_origins_patterns' => [],
 
-    'allowed_headers' => ['*'],
+    'allowed_headers' => ['*'],  // Allow all headers
 
     'exposed_headers' => [],
 
     'max_age' => 0,
 
-    'supports_credentials' => true,
+    'supports_credentials' => true, 
 
 ];
